@@ -40,38 +40,445 @@ Restaurant restaurantInput(Restaurant &r) {
 //function to format and output created struct, overloaded for multiple input
 void restaurantFormat(const Restaurant &r) {
 //NAME      [ADDRESS]            [CUISINE]     [PRICE]  [REVIEW]
+    string reviewS, priceR;
+    switch(r.reviewScore) {
+        case 1:
+            reviewS = "!";
+            break;
+        case 2:
+            reviewS = "!!";
+            break;
+        case 3:
+            reviewS = "!!!";
+            break;
+        case 4:
+            reviewS = "!!!!";
+            break;
+        case 5:
+            reviewS = "!!!!!";
+            break;
+        default:
+            reviewS = "";
+            break;
+}
+    switch(r.priceRange) {
+        case 1:
+            priceR = "$";
+        break;
+        case 2:
+            priceR = "$$";
+        break;
+        case 3:
+            priceR = "$$$";
+        break;
+        case 4:
+            priceR = "$$$$";
+        break;
+        case 5:
+            priceR = "$$$$$";
+        break;
+        default:
+            priceR = "";
+        break;
+}
+
     cout << left<< setw(15) << "NAME" << setw(30) << "ADDRESS" << setw(15) << "CUISINE" << right << setw(7) << "PRICE" << right << setw(7) << "SCORE" << endl;
-    cout << left<< setw(15) << r.name << setw(30) << r.address << setw(15) << r.cuisine << right << setw(7) << r.priceRange << right << setw(7) << r.reviewScore << endl;
+    cout << left<< setw(15) << r.name << setw(30) << r.address << setw(15) << r.cuisine << right << setw(7) << priceR << right << setw(7) << reviewS << endl;
 }
 void restaurantFormat(const Restaurant &r1, const Restaurant &r2) {
+    string reviewS1, priceR1, reviewS2, priceR2;
+    switch(r1.reviewScore) {
+        case 1:
+            reviewS1 = "!";
+        break;
+        case 2:
+            reviewS1 = "!!";
+        break;
+        case 3:
+            reviewS1 = "!!!";
+        break;
+        case 4:
+            reviewS1 = "!!!!";
+        break;
+        case 5:
+            reviewS1 = "!!!!!";
+        break;
+        default:
+            reviewS1 = "";
+        break;
+    }
+    switch(r1.priceRange) {
+        case 1:
+            priceR1 = "$";
+        break;
+        case 2:
+            priceR1 = "$$";
+        break;
+        case 3:
+            priceR1 = "$$$";
+        break;
+        case 4:
+            priceR1 = "$$$$";
+        break;
+        case 5:
+            priceR1 = "$$$$$";
+        break;
+        default:
+            priceR1 = "";
+        break;
+    }
+    switch(r2.reviewScore) {
+        case 1:
+            reviewS2 = "!";
+        break;
+        case 2:
+            reviewS2 = "!!";
+        break;
+        case 3:
+            reviewS2 = "!!!";
+        break;
+        case 4:
+            reviewS2 = "!!!!";
+        break;
+        case 5:
+            reviewS2 = "!!!!!";
+        break;
+        default:
+            reviewS2 = "";
+        break;
+    }
+    switch(r2.priceRange) {
+        case 1:
+            priceR2 = "$";
+        break;
+        case 2:
+            priceR2 = "$$";
+        break;
+        case 3:
+            priceR2 = "$$$";
+        break;
+        case 4:
+            priceR2 = "$$$$";
+        break;
+        case 5:
+            priceR2 = "$$$$$";
+        break;
+        default:
+            priceR2 = "";
+        break;
+    }
+
     cout << left<< setw(15) << "NAME" << setw(30) << "ADDRESS" << setw(15) << "CUISINE" << right << setw(7) << "PRICE" << right << setw(7) << "SCORE" << endl;
-    cout << left<< setw(15) << r1.name << setw(30) << r1.address << setw(15) << r1.cuisine << right << setw(7) << r1.priceRange << right << setw(7) << r1.reviewScore << endl;
-    cout << left<< setw(15) << r2.name << setw(30) << r2.address << setw(15) << r2.cuisine << right << setw(7) << r2.priceRange << right << setw(7) << r2.reviewScore << endl;
+    cout << left<< setw(15) << r1.name << setw(30) << r1.address << setw(15) << r1.cuisine << right << setw(7) << priceR1 << right << setw(7) << reviewS1 << endl;
+    cout << left<< setw(15) << r2.name << setw(30) << r2.address << setw(15) << r2.cuisine << right << setw(7) << priceR2 << right << setw(7) << reviewS2 << endl;
 }
 void restaurantFormat(const Restaurant &r1, const Restaurant &r2, const Restaurant &r3) {
+    string reviewS1, priceR1, reviewS2, priceR2, reviewS3, priceR3;
+    switch(r1.reviewScore) {
+        case 1:
+            reviewS1 = "!";
+        break;
+        case 2:
+            reviewS1 = "!!";
+        break;
+        case 3:
+            reviewS1 = "!!!";
+        break;
+        case 4:
+            reviewS1 = "!!!!";
+        break;
+        case 5:
+            reviewS1 = "!!!!!";
+        break;
+        default:
+            reviewS1 = "";
+        break;
+    }
+    switch(r1.priceRange) {
+        case 1:
+            priceR1 = "$";
+        break;
+        case 2:
+            priceR1 = "$$";
+        break;
+        case 3:
+            priceR1 = "$$$";
+        break;
+        case 4:
+            priceR1 = "$$$$";
+        break;
+        case 5:
+            priceR1 = "$$$$$";
+        break;
+        default:
+            priceR1 = "";
+        break;
+    }
+    switch(r2.reviewScore) {
+        case 1:
+            reviewS2 = "!";
+        break;
+        case 2:
+            reviewS2 = "!!";
+        break;
+        case 3:
+            reviewS2 = "!!!";
+        break;
+        case 4:
+            reviewS2 = "!!!!";
+        break;
+        case 5:
+            reviewS2 = "!!!!!";
+        break;
+        default:
+            reviewS2 = "";
+        break;
+    }
+    switch(r2.priceRange) {
+        case 1:
+            priceR2 = "$";
+        break;
+        case 2:
+            priceR2 = "$$";
+        break;
+        case 3:
+            priceR2 = "$$$";
+        break;
+        case 4:
+            priceR2 = "$$$$";
+        break;
+        case 5:
+            priceR2 = "$$$$$";
+        break;
+        default:
+            priceR2 = "";
+        break;
+    }
+    switch(r3.reviewScore) {
+        case 1:
+            reviewS3 = "!";
+        break;
+        case 2:
+            reviewS3 = "!!";
+        break;
+        case 3:
+            reviewS3 = "!!!";
+        break;
+        case 4:
+            reviewS3 = "!!!!";
+        break;
+        case 5:
+            reviewS3 = "!!!!!";
+        break;
+        default:
+            reviewS3 = "";
+        break;
+    }
+    switch(r3.priceRange) {
+        case 1:
+            priceR3 = "$";
+        break;
+        case 2:
+            priceR3 = "$$";
+        break;
+        case 3:
+            priceR3 = "$$$";
+        break;
+        case 4:
+            priceR3 = "$$$$";
+        break;
+        case 5:
+            priceR3 = "$$$$$";
+        break;
+        default:
+            priceR3 = "";
+        break;
+    }
     cout << left<< setw(15) << "NAME" << setw(30) << "ADDRESS" << setw(15) << "CUISINE" << right << setw(7) << "PRICE" << right << setw(7) << "SCORE" << endl;
-    cout << left<< setw(15) << r1.name << setw(30) << r1.address << setw(15) << r1.cuisine << right << setw(7) << r1.priceRange << right << setw(7) << r1.reviewScore << endl;
-    cout << left<< setw(15) << r2.name << setw(30) << r2.address << setw(15) << r2.cuisine << right << setw(7) << r2.priceRange << right << setw(7) << r2.reviewScore << endl;
-    cout << left<< setw(15) << r3.name << setw(30) << r3.address << setw(15) << r3.cuisine << right << setw(7) << r3.priceRange << right << setw(7) << r3.reviewScore << endl;
+    cout << left<< setw(15) << r1.name << setw(30) << r1.address << setw(15) << r1.cuisine << right << setw(7) << priceR1 << right << setw(7) << reviewS1 << endl;
+    cout << left<< setw(15) << r2.name << setw(30) << r2.address << setw(15) << r2.cuisine << right << setw(7) << priceR2 << right << setw(7) << reviewS2 << endl;
+    cout << left<< setw(15) << r3.name << setw(30) << r3.address << setw(15) << r3.cuisine << right << setw(7) << priceR3 << right << setw(7) << reviewS3 << endl;
 }
+//I can think of ways this would be a lot easier and cleaner to implement using classes instead of structures
 void restaurantFormat(const Restaurant &r1, const Restaurant &r2, const Restaurant &r3, const Restaurant &r4) {
+    string reviewS1, priceR1, reviewS2, priceR2, reviewS3, priceR3, reviewS4, priceR4;
+    switch(r1.reviewScore) {
+        case 1:
+            reviewS1 = "!";
+        break;
+        case 2:
+            reviewS1 = "!!";
+        break;
+        case 3:
+            reviewS1 = "!!!";
+        break;
+        case 4:
+            reviewS1 = "!!!!";
+        break;
+        case 5:
+            reviewS1 = "!!!!!";
+        break;
+        default:
+            reviewS1 = "";
+        break;
+    }
+    switch(r1.priceRange) {
+        case 1:
+            priceR1 = "$";
+        break;
+        case 2:
+            priceR1 = "$$";
+        break;
+        case 3:
+            priceR1 = "$$$";
+        break;
+        case 4:
+            priceR1 = "$$$$";
+        break;
+        case 5:
+            priceR1 = "$$$$$";
+        break;
+        default:
+            priceR1 = "";
+        break;
+    }
+    switch(r2.reviewScore) {
+        case 1:
+            reviewS2 = "!";
+        break;
+        case 2:
+            reviewS2 = "!!";
+        break;
+        case 3:
+            reviewS2 = "!!!";
+        break;
+        case 4:
+            reviewS2 = "!!!!";
+        break;
+        case 5:
+            reviewS2 = "!!!!!";
+        break;
+        default:
+            reviewS2 = "";
+        break;
+    }
+    switch(r2.priceRange) {
+        case 1:
+            priceR2 = "$";
+        break;
+        case 2:
+            priceR2 = "$$";
+        break;
+        case 3:
+            priceR2 = "$$$";
+        break;
+        case 4:
+            priceR2 = "$$$$";
+        break;
+        case 5:
+            priceR2 = "$$$$$";
+        break;
+        default:
+            priceR2 = "";
+        break;
+    }
+    switch(r3.reviewScore) {
+        case 1:
+            reviewS3 = "!";
+        break;
+        case 2:
+            reviewS3 = "!!";
+        break;
+        case 3:
+            reviewS3 = "!!!";
+        break;
+        case 4:
+            reviewS3 = "!!!!";
+        break;
+        case 5:
+            reviewS3 = "!!!!!";
+        break;
+        default:
+            reviewS3 = "";
+        break;
+    }
+    switch(r3.priceRange) {
+        case 1:
+            priceR3 = "$";
+        break;
+        case 2:
+            priceR3 = "$$";
+        break;
+        case 3:
+            priceR3 = "$$$";
+        break;
+        case 4:
+            priceR3 = "$$$$";
+        break;
+        case 5:
+            priceR3 = "$$$$$";
+        break;
+        default:
+            priceR3 = "";
+        break;
+    }
+    switch(r4.reviewScore) {
+        case 1:
+            reviewS4 = "!";
+        break;
+        case 2:
+            reviewS4 = "!!";
+        break;
+        case 3:
+            reviewS4 = "!!!";
+        break;
+        case 4:
+            reviewS4 = "!!!!";
+        break;
+        case 5:
+            reviewS4 = "!!!!!";
+        break;
+        default:
+            reviewS4 = "";
+        break;
+    }
+    switch(r4.priceRange) {
+        case 1:
+            priceR4 = "$";
+        break;
+        case 2:
+            priceR4 = "$$";
+        break;
+        case 3:
+            priceR4 = "$$$";
+        break;
+        case 4:
+            priceR4 = "$$$$";
+        break;
+        case 5:
+            priceR4 = "$$$$$";
+        break;
+        default:
+            priceR4 = "";
+        break;
+    }
     cout << left<< setw(15) << "NAME" << setw(30) << "ADDRESS" << setw(15) << "CUISINE" << right << setw(7) << "PRICE" << right << setw(7) << "SCORE" << endl;
-    cout << left<< setw(15) << r1.name << setw(30) << r1.address << setw(15) << r1.cuisine << right << setw(7) << r1.priceRange << right << setw(7) << r1.reviewScore << endl;
-    cout << left<< setw(15) << r2.name << setw(30) << r2.address << setw(15) << r2.cuisine << right << setw(7) << r2.priceRange << right << setw(7) << r2.reviewScore << endl;
-    cout << left<< setw(15) << r3.name << setw(30) << r3.address << setw(15) << r3.cuisine << right << setw(7) << r3.priceRange << right << setw(7) << r3.reviewScore << endl;
-    cout << left<< setw(15) << r4.name << setw(30) << r4.address << setw(15) << r4.cuisine << right << setw(7) << r4.priceRange << right << setw(7) << r4.reviewScore << endl;
+    cout << left<< setw(15) << r1.name << setw(30) << r1.address << setw(15) << r1.cuisine << right << setw(7) << priceR1 << right << setw(7) << reviewS1 << endl;
+    cout << left<< setw(15) << r2.name << setw(30) << r2.address << setw(15) << r2.cuisine << right << setw(7) << priceR2 << right << setw(7) << reviewS2 << endl;
+    cout << left<< setw(15) << r3.name << setw(30) << r3.address << setw(15) << r3.cuisine << right << setw(7) << priceR3 << right << setw(7) << reviewS3 << endl;
+    cout << left<< setw(15) << r4.name << setw(30) << r4.address << setw(15) << r4.cuisine << right << setw(7) << priceR4 << right << setw(7) << reviewS4 << endl;
 }
 
 int main() {
     Restaurant r1, r2, r3, r4;
     restaurantInput(r1);
-    //restaurantInput(r2);
-    //restaurantInput(r3);
-    //restaurantInput(r4);
+    restaurantInput(r2);
+    restaurantInput(r3);
+    restaurantInput(r4);
 
-    restaurantFormat(r1);
-    //restaurantFormat(r2);
-    //restaurantFormat(r3);
-    //restaurantFormat(r4);
+    //restaurantFormat(r1);
+    //restaurantFormat(r1, r2);
+    //restaurantFormat(r1, r2, r3);
+    restaurantFormat(r1, r2, r3, r4);
     return 0;
 }
