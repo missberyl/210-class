@@ -18,23 +18,35 @@ void restaurantFormat(const Restaurant &r1, const Restaurant &r2, const Restaura
 
 //function to create struct, receive user input and return to main
 Restaurant restaurantInput(Restaurant &r) {
-    //name
+//name
     cout << "Restaurant Name? " << endl;
     getline(cin, r.name);
-    //address
+//address
     cout << "Restaurant Address? " << endl;
     getline(cin, r.address);
-    //cuisine
+//cuisine
     cout << "Restaurant Cuisine? " << endl;
     getline(cin, r.cuisine);
-    //price range, 1-5 (prints as $)
+//price range, 1-5 (prints as $)
     cout << "Restaurant Price? (1 thru 5, 1 being lowest)" << endl;
     cin >> r.priceRange;
     cin.ignore(100, '\n');
-    //review score 1-5 (prints as stars?)
+     while (r.priceRange <= 0 || r.priceRange >= 6) {
+        cout << "Invalid Input. Try Again." << endl;
+        cout << "Restaurant Price? (1 thru 5, 1 being lowest)" << endl;
+        cin >> r.priceRange;
+        cin.ignore(100, '\n');
+    }
+//review score 1-5 (prints as stars?)
     cout << "Restaurant Review Score? (1 thru 5, 1 being lowest)" << endl;
     cin >> r.reviewScore;
     cin.ignore(100, '\n');
+    while (r.reviewScore <= 0 || r.reviewScore >= 6) {
+        cout << "Invalid Input. Try Again." << endl;
+        cout << "Restaurant Review Score? (1 thru 5, 1 being lowest)" << endl;
+        cin >> r.reviewScore;
+        cin.ignore(100, '\n');
+    }
     return r;
 }
 //function to format and output created struct, overloaded for multiple input
@@ -471,14 +483,39 @@ void restaurantFormat(const Restaurant &r1, const Restaurant &r2, const Restaura
 
 int main() {
     Restaurant r1, r2, r3, r4;
-    restaurantInput(r1);
-    restaurantInput(r2);
-    restaurantInput(r3);
-    restaurantInput(r4);
+    int rMake = 0;
 
-    //restaurantFormat(r1);
-    //restaurantFormat(r1, r2);
-    //restaurantFormat(r1, r2, r3);
-    restaurantFormat(r1, r2, r3, r4);
+    cout << "How many restaurants do you want to enter? (1-4) " << endl;
+    cin >> rMake;
+    cin.ignore(100, '\n');
+    while (rMake <= 0 || rMake >= 5) {
+        cout << "Input Error, Try Again." << endl;
+        cout << "How many restaurants do you want to enter? (1-4) " << endl;
+        cin >> rMake;
+        cin.ignore(100, '\n');
+    }
+
+    if (rMake == 1) {
+        restaurantInput(r1);
+        restaurantFormat(r1);
+}
+    else if (rMake == 2) {
+        restaurantInput(r1);
+        restaurantInput(r2);
+        restaurantFormat(r1, r2);
+}
+    else if (rMake == 3) {
+        restaurantInput(r1);
+        restaurantInput(r2);
+        restaurantInput(r3);
+        restaurantFormat(r1, r2, r3);
+}
+    else if (rMake == 4) {
+        restaurantInput(r1);
+        restaurantInput(r2);
+        restaurantInput(r3);
+        restaurantInput(r4);
+        restaurantFormat(r1, r2, r3, r4);
+}
     return 0;
 }
