@@ -1,3 +1,6 @@
+// COMSC-210 | Lab 3A | Beryl
+// IDE used: CLion
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -49,7 +52,7 @@ Restaurant restaurantInput(Restaurant &r) {
     }
     return r;
 }
-//function to format and output created struct, overloaded for multiple input
+//function to format and output created struct(s), overloaded for multiple input
 void restaurantFormat(const Restaurant &r) {
 //NAME      [ADDRESS]            [CUISINE]     [PRICE]  [REVIEW]
     string reviewS, priceR;
